@@ -12,6 +12,7 @@
             <th>Descripción</th>
             <th>Cantidad</th>
             <th>Categoría</th>
+            <th>Modificar</th>
         </thead>
         <tbody>
             {% for prod in res%}
@@ -20,6 +21,7 @@
                 <td>{{prod[1]}}</td>
                 <td>{{prod[2]}}</td>
                 <td>{{prod[3]}}</td>
+                <td><a href="/modificar">Modificar</a></td>
             </tr>
             {% endfor %}
         </tbody>

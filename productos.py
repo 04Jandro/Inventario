@@ -38,8 +38,7 @@ class Productos:
         return resultado
 
     def actualiza(self,prod):
-        sql =f"INSERT INTO insumos (Producto,Descripcion,Cantidad,Categoria) VALUES ('{prod[0]}','{prod[1]}','{prod[2]}','{prod[3]}')" 
-        self.cursor.execute(sql)
+        sql =f"UPDATE insumos (Producto,Descripcion,Cantidad,Categoria) SET('','','{prod[2]}','')" 
         self.cursor.execute(sql)
         self.db.commit()
 

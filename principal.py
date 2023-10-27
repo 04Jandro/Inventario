@@ -49,23 +49,30 @@ def guardarproducto():
     miCursor.execute(sql)
     resultado = miCursor.fetchall()
     conexion.commit()
-    prod=request.form["prod"]
+    produ=request.form["produc"]
     desc=request.form["desc"]
     cant=request.form["cant"]
     categ=request.form["categ"]
-    producto=[prod,desc,cant,categ]
+    producto=[produ,desc,cant,categ]
     productosI.agregarproducto(producto)
     return redirect("/recargar")
 
+
+@app.route("/modificar/<produ>")
+def modificarinventario(produ):
+    return render_template ("modificarinventario.html", )
+
 @app.route("/actualizar", methods=['POST'])
-def actualizaproducto():
-    prod=request.form["prod"]
+def actualizainventario():
+    produ=request.form["produc"]
     desc=request.form["desc"]
     cant=request.form["cant"]
     categ=request.form["categ"]
-    producto=[prod,desc,cant,categ]
+    producto=[produ,desc,cant,categ]
     productosI.actualiza(producto)
     return redirect("/recargar")
 
 if __name__=='__main__':
     app.run(host="0.0.0.0",debug=True,port="8090")
+
+    
