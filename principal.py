@@ -57,7 +57,7 @@ def guardarproducto():
     productosI.agregarproducto(producto)
     return redirect("/recargar")
 
-@app.route("/actualizaproducto", methods=['POST'])
+@app.route("/actualizar", methods=['POST'])
 def actualizaproducto():
     prod=request.form["prod"]
     desc=request.form["desc"]
